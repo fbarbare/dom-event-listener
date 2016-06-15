@@ -1,0 +1,30 @@
+{
+  "name": "dom-event-listener",
+  "version": "1.0.0",
+  "description": "Cross browser event listeners",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florian-barbare/dom-event-listener.git"
+  },
+  "keywords": [
+    "event",
+    "listener",
+    "dom",
+    "events",
+    "addeventlistener",
+    "removeeventlistener"
+  ],
+  "author": "Florian BARBARE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/florian-barbare/dom-event-listener/issues"
+  },
+  "homepage": "https://github.com/florian-barbare/dom-event-listener#readme",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  }
+}
