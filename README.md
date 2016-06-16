@@ -3,7 +3,7 @@ Cross browser event listener
 
 # ON GOING DEVELOPMENT, AVAILABLE IN A FEW DAYS
 
-> Cross-browser event listeners out of the box.
+> Cross-browser event listeners made out of the box.
 
 ## Install
 
