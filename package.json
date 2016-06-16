@@ -19,7 +19,7 @@
     "removeeventlistener"
   ],
   "author": "Florian BARBARE",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/florian-barbare/dom-event-listener/issues"
   },
