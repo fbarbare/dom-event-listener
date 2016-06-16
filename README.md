@@ -33,8 +33,6 @@ import domEventListener from 'dom-event-listener';
 
 ### Adding an event listener
 
-By passing a string selector [(see full demo)](https://github.com/zenorocha/good-listener/blob/master/demo/selector.html).
-
 ```js
 import domEventListener from 'dom-event-listener';
 
