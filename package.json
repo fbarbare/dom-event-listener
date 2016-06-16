@@ -2,9 +2,9 @@
   "name": "dom-event-listener",
   "version": "1.0.1",
   "description": "Cross browser event listeners",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --require ./test/setup.js \"test/**/*@(.js)\""
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,12 @@
   "homepage": "https://github.com/florian-barbare/dom-event-listener#readme",
   "dependencies": {
     "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.2.1",
+    "mocha": "^2.5.3",
+    "simulant": "^0.2.2",
+    "sinon": "^1.17.4"
   }
 }
