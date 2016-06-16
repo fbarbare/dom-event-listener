@@ -1,16 +1,28 @@
 'use strict';
 
-var _ = require('lodash'),
+var find = require('lodash/find'),
+    filter = require('lodash/filter'),
+    forEach = require('lodash/forEach'),
+    clone = require('lodash/clone'),
 
     /*
      [
         {
-          element: my DOM element
+          element: node
           events: {
             load: {
-              bubbling: []
-              nonbubbling: []
-            }
+              bubbling: {
+                onEvent: function,
+                handlers: [function, object]
+              }
+              nonbubbling: {
+                onEvent: function,
+                handlers: [function, object]
+              }
+            },
+            click: {...},
+            keydown: {...},
+            ...
           }
         }
      ]
@@ -19,7 +31,7 @@ var _ = require('lodash'),
 
 function add(element, eventType, handler, bubbling) {
   var eventCategory = bubbling? 'bubbling': 'nonbubbling',
-      event = _.find(events, event => event.element === element)[0];
+      event = find(events, event => event.element === element)[0];
 
   if (!event) { // When at least 1 event has been added to that element
     event = {
@@ -71,10 +83,10 @@ function addEventListener(element, eventType, bubbling, ) {
 
 function handleEvent(event, bubbling) {
   var eventCategory = bubbling? 'bubbling': 'nonbubbling',
-      element = _.find(events, item => item.element === event.currentTarget)[0];
+      element = find(events, item => item.element === event.currentTarget)[0],
+      handlers = clone(element.events[event.type][eventCategory].handlers); // Cloning them so event can be removed while running all the handlers
 
-  _(element.events[event.type][eventCategory])
-    .forEach(function (handler) {
+    forEach(handlers, function (handler) {
       if (typeof handler === 'function') {
         handler(event);
       } else if (typeof handler === 'object' && typeof handler.handleEvent === 'function') {
@@ -85,17 +97,18 @@ function handleEvent(event, bubbling) {
 
 function remove(element, eventType, handler, bubbling) {
   var eventCategory = bubbling? 'bubbling': 'nonbubbling',
-      event = _.find(events, event => event.element === element)[0];
+      event = find(events, event => event.element === element)[0];
 
   if (!event || !event.events[eventType] || !event.events[eventType][eventCategory]) {
     return;
   }
 
   event = event.events[eventType][eventCategory];
-  event.handlers = _.filter(event.handlers, item => item !== handler);
+  event.handlers = filter(event.handlers, item => item !== handler);
 
   if (event.length === 0) {
     removeEventListener(element, eventType, event.onEvent, bubbling);
+    delete event.onEvent;
   }
 }
 
