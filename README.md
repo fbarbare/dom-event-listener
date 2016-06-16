@@ -56,7 +56,7 @@ domEventListener.remove(element, 'click', onClick);
 
 ## Fancy keeping your scope?
 
-Pass an object with the handleEvent function
+Pass an object with a handleEvent function
 
 ```js
 import domEventListener from 'dom-event-listener';
@@ -73,6 +73,28 @@ let object = {
 
 domEventListener.add(element, 'click', object);
 domEventListener.remove(element, 'click', object);
+```
+
+## The event object
+
+Getting cross browser properties:
+
+###### currentTarget
+
+```js
+var element = event.currentTarget;
+```
+
+###### target
+
+```js
+var element = event.target;
+```
+
+###### preventDefault
+
+```js
+event.preventDefault();
 ```
 
 ## Browser Support
