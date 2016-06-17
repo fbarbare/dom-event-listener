@@ -98,6 +98,16 @@ describe('index', function () {
     assert.equal(object.handleEvent.callCount, 1);
   });
 
+  it('the given object can create its handleEvent function after creating the event', function () {
+    var object = {};
+
+    domEventListener.add(document, 'click', object);
+    object.handleEvent = sinon.spy();
+    simulant.fire(document, 'click');
+
+    assert.equal(object.handleEvent.callCount, 1);
+  });
+
   describe('the event object', function () {
     it('has the currentTarget', function () {
       var onClick = sinon.spy();
