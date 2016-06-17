@@ -11,10 +11,10 @@
     "url": "git+https://github.com/florian-barbare/dom-event-listener.git"
   },
   "keywords": [
+    "dom",
     "event",
     "listener",
-    "dom",
-    "events",
+    "eventlistener",
     "addeventlistener",
     "removeeventlistener"
   ],
