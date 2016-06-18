@@ -1,14 +1,7 @@
 # dom-event-listener
-This is a mini-library for Cross browser event listener
-
-## Installation
->npm install dom-event-listener --save
-
-## Usage
-
 > Cross-browser event listeners made out of the box.
 
-## Install
+## Installation
 
 Just get it from the npm.
 
@@ -16,7 +9,7 @@ Just get it from the npm.
 npm i dom-event-listener --save
 ```
 
-## Setup:
+## Setup
 
 ###### Browserify
 
@@ -39,7 +32,7 @@ import domEventListener from 'dom-event-listener';
 
 let element = document.getElementById('my-element');
 
-domEventListener.add(element, 'click', function(event) {
+domEventListener.add(element, 'click', (event) => {
     console.log(event);
 });
 ```
@@ -61,7 +54,7 @@ domEventListener.remove(element, 'click', onClick);
 
 ## Fancy keeping your scope?
 
-Pass an object with a handleEvent function
+Pass an object with a handleEvent function.
 
 ```js
 import domEventListener from 'dom-event-listener';
