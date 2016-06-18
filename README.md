@@ -1,5 +1,10 @@
 # dom-event-listener
-Cross browser event listener
+This is a mini-library for Cross browser event listener
+
+## Installation
+>npm install dom-event-listener --save
+
+## Usage
 
 > Cross-browser event listeners made out of the box.
 
