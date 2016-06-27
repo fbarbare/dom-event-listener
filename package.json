@@ -1,6 +1,6 @@
 {
   "name": "dom-event-listener",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Cross browser event listeners",
   "main": "lib/index.js",
   "scripts": {
